@@ -1,7 +1,7 @@
-export const Increment = () => ({
-  type: "increment"
+export const openModal = () => ({
+  type: "open_modal",
 });
 
-export const Decrement = () => ({
-  type: "decrement"
+export const closeModal = () => ({
+  type: "close_modal",
 });

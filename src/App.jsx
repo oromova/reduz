@@ -1,22 +1,19 @@
-
-import React from 'react'
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Decrement, Increment } from './Action';
-import Header from './Header';
-
+import { closeModal, openModal } from './Action';
 
 function App() {
-  const counter = useSelector(state => state.counter)
-  const dispatch = useDispatch()
+  const open = useSelector(state => state.open);
+  const dispatch = useDispatch();
 
   return (
     <div>
-      <Header/>
-      Counter {counter}
-      <button onClick={() => dispatch(Increment())}>+</button>
-      <button onClick={() => dispatch(Decrement())}>-</button>
+      <h1>Modal</h1>
+      <button onClick={() => dispatch(openModal())}>open modal</button>
+      {!open ? "" : <div>Modal bor <span onClick={()=>dispatch(closeModal())}>x</span></div>
+}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
