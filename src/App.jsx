@@ -1,19 +1,14 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeModal, openModal } from './Action';
+import React from 'react'
+import { NavLink, Outlet } from 'react-router-dom';
 
 function App() {
-  const open = useSelector(state => state.open);
-  const dispatch = useDispatch();
-
   return (
     <div>
-      <h1>Modal</h1>
-      <button onClick={() => dispatch(openModal())}>open modal</button>
-      {!open ? "" : <div>Modal bor <span onClick={()=>dispatch(closeModal())}>x</span></div>
-}
+      <NavLink to='/'>Home</NavLink>
+      <NavLink to='/favourites'>Favourites</NavLink>
+      <Outlet/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

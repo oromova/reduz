@@ -5,3 +5,13 @@ export const openModal = () => ({
 export const closeModal = () => ({
   type: "close_modal",
 });
+
+export const addCars = (car) => ({
+  type: "add_cars",
+  payload: car,
+}); 
+
+export const removeCars = (id) => ({
+  type: "remove_cars",
+  payload: id,
+});
